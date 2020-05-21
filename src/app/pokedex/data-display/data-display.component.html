@@ -12,16 +12,17 @@
   [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Filters</button>
   <nav aria-label="Page navigation" class="col">
     <ul class="pagination justify-content-end">
-      <li class="page-item " [ngClass]="(pageNumber == 1)?'disabled':''">
+      <li class="page-item" [ngClass]="(pageNumber == 1)?'disabled':''">
         <a class="page-link" (click) = "previousPage()"  aria-disabled="true">Previous</a>
       </li>
-      <li class="page-item page-number disabled"><a class="page-link" href="#">{{ pageNumber }}</a></li>
+      <li class="page-item page-number disabled"><a class="page-link">{{ pageNumber }}</a></li>
       <li class="page-item">
         <a class="page-link" (click) = "nextPage()">Next</a>
       </li>
     </ul>
   </nav>
 </div>
+
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
   <ng-container *ngIf="pokedex">

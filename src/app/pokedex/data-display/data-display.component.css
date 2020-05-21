@@ -17,6 +17,7 @@
 }
 .page-item {
   color: rgb(108, 158, 233);
+  cursor: pointer;
 }
 .page-item.page-number {
   width: 6em;
@@ -26,5 +27,5 @@
   font-weight: 600;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
