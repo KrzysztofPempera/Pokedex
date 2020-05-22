@@ -10,7 +10,7 @@
 <div class="row mt-3">
   <button type="button" class="btn btn-danger" (click)="isCollapsed = !isCollapsed"
   [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Filters</button>
-  <nav aria-label="Page navigation" class="col">
+  <nav aria-label="Page navigation" class="col noselect">
     <ul class="pagination justify-content-end">
       <li class="page-item" [ngClass]="(pageNumber == 1)?'disabled':''">
         <a class="page-link" (click) = "previousPage()"  aria-disabled="true">Previous</a>
