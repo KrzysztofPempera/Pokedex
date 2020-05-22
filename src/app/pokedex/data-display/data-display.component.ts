@@ -11,7 +11,7 @@ export class DataDisplayComponent implements OnInit {
 
   pokedex: Pokedex;
   types: Types;
-  query = '?offset=0&limit=40';
+  query = '?offset=0&limit=';
   newQuery: string;
   pokemonId = 1;
   pageNumber = 1;
@@ -27,11 +27,15 @@ export class DataDisplayComponent implements OnInit {
   }
 
   nextPage() {
-    this.newQuery = this.pokedex.next.slice(33);
-    this.getPokedex(this.newQuery, this.pageChange[1]);
+    if (this.pokedex.next != null){
+      this.newQuery = this.pokedex.next.slice(33,-2);
+      this.getPokedex(this.newQuery, this.pageChange[1]);
+    }
+    // else if(this.pokedex.next == null)
+
   }
   previousPage() {
-    this.newQuery = this.pokedex.previous.slice(33);
+    this.newQuery = this.pokedex.previous.slice(33,-2);
     this.getPokedex(this.newQuery, this.pageChange[0]);
   }
 
@@ -44,7 +48,7 @@ export class DataDisplayComponent implements OnInit {
   }
 
   getPokedex(query: string, pageChange?: number) {
-    this.pokeService.getPokedex(query).subscribe(data =>{
+    this.pokeService.getPokedex(query+'40').subscribe(data =>{
       this.pokedex = data;
       if (pageChange){
         this.pageNumber += pageChange;
