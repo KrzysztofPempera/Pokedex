@@ -15,7 +15,7 @@ export class DataDisplayComponent implements OnInit {
   newQuery: string;
   pokemonId = 1;
   pageNumber = 1;
-  pageChange = [-1,1];
+  pageChange = [-1, 1];
 
   public isCollapsed = true;
 
@@ -28,19 +28,19 @@ export class DataDisplayComponent implements OnInit {
 
   nextPage() {
     if (this.pokedex.next != null){
-      this.newQuery = this.pokedex.next.slice(33,-2);
+      this.newQuery = this.pokedex.next.slice(33, -2);
       this.getPokedex(this.newQuery, this.pageChange[1]);
     }
     // else if(this.pokedex.next == null)
 
   }
   previousPage() {
-    this.newQuery = this.pokedex.previous.slice(33,-2);
+    this.newQuery = this.pokedex.previous.slice(33, -2);
     this.getPokedex(this.newQuery, this.pageChange[0]);
   }
 
   getTypes() {
-    this.pokeService.getTypes().subscribe(data =>{
+    this.pokeService.getTypes().subscribe(data => {
       this.types = data;
       this.types.results.pop();
       this.types.results.pop();
@@ -48,7 +48,7 @@ export class DataDisplayComponent implements OnInit {
   }
 
   getPokedex(query: string, pageChange?: number) {
-    this.pokeService.getPokedex(query+'40').subscribe(data =>{
+    this.pokeService.getPokedex(query + '40').subscribe(data => {
       this.pokedex = data;
       if (pageChange){
         this.pageNumber += pageChange;
