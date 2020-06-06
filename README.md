@@ -3,7 +3,7 @@
 
 ## Development server
 
-`npm install` to install required packages and dependencies. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. 
+`npm install` to install required packages. Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. 
 
 ## Further improvement 
 
