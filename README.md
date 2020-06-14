@@ -11,3 +11,6 @@
 - Proper aria labeling
 - Improving accessibility
 - Adding tests 
+
+## Notes
+- search requires full name of a pokemon
